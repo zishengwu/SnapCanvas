@@ -40,8 +40,8 @@
 
 1. 克隆仓库:
    ```bash
-   git clone https://github.com/your-username/image-editor.git
-   cd image-editor
+   git clone https://github.com/zishengwu/SnapCanvas.git
+   cd SnapCanvas
    ```
 
 2. 安装依赖:

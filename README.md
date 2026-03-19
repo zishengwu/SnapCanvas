@@ -40,8 +40,8 @@ A lightweight, web-based image editor for quick image manipulation, focusing on 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/image-editor.git
-   cd image-editor
+   git clone https://github.com/zishengwu/SnapCanvas.git
+   cd SnapCanvas
    ```
 
 2. Install dependencies:
