@@ -1,4 +1,5 @@
 import { useRef, useCallback, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { fabric } from 'fabric';
 import { useEditorStore } from '../stores/editorStore';
 import { getAverageColor } from '../utils/colorUtils';
@@ -25,6 +26,7 @@ interface CanvasEditorProps {
 }
 
 export function CanvasEditor({ handlers, onTextStyleChange }: CanvasEditorProps) {
+  const { t } = useTranslation();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const fabricCanvasRef = useRef<fabric.Canvas | null>(null);
   const sourceCanvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -133,15 +135,15 @@ export function CanvasEditor({ handlers, onTextStyleChange }: CanvasEditorProps)
   // Use a separate effect to update status message when state changes
   useEffect(() => {
     if (isSelecting) {
-      setStatusMessage('拖拽框选区域');
+      setStatusMessage(t('common.status.selectRegion'));
     } else if (hasSelection) {
-      setStatusMessage('已选中区域');
+      setStatusMessage(t('common.status.regionSelected'));
     } else if (hasImage) {
-      setStatusMessage('未选区');
+      setStatusMessage(t('common.status.noSelection'));
     } else {
-      setStatusMessage('请上传图片');
+      setStatusMessage(t('common.status.uploadFirst'));
     }
-  }, [isSelecting, hasSelection, hasImage, setStatusMessage]);
+  }, [isSelecting, hasSelection, hasImage, setStatusMessage, t]);
 
   const applyTextStyleToActive = useCallback(() => {
     const canvas = fabricCanvasRef.current;

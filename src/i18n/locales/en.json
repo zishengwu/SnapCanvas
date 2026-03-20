@@ -1,0 +1,40 @@
+{
+  "common": {
+    "upload": "Upload Image",
+    "subtitle": "Image Text Tool",
+    "clickOrDrag": "Click or drag to upload",
+    "fileSupport": "PNG, JPG up to 10MB",
+    "tools": "Tools",
+    "select": "Select",
+    "fill": "Fill",
+    "text": "Text",
+    "move": "Move",
+    "end": "End",
+    "imageScale": "Image Scale",
+    "fillMode": "Fill Mode",
+    "autoColor": "Auto Color (Rec.)",
+    "solidColor": "Solid Color",
+    "color": "Color",
+    "textStyle": "Text Style",
+    "font": "Font",
+    "fontSize": "Size",
+    "fontColor": "Color",
+    "textWidth": "Width",
+    "lineHeight": "Line Height",
+    "save": "Save Image",
+    "undo": "Undo",
+    "redo": "Redo",
+    "undoTitle": "Undo (Ctrl+Z / Left Arrow)",
+    "redoTitle": "Redo (Ctrl+Y / Right Arrow)",
+    "tips": {
+      "main": "Tip: Select region then click Fill to automatically remove text. Use Left/Right arrow keys for Undo/Redo.",
+      "shortcuts": "Shortcuts: Ctrl+Z (Undo), Ctrl+Shift+Z (Redo)"
+    },
+    "status": {
+      "selectRegion": "Drag to select region",
+      "regionSelected": "Region selected",
+      "noSelection": "No selection",
+      "uploadFirst": "Please upload image"
+    }
+  }
+}
