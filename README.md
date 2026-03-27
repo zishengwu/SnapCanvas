@@ -17,7 +17,8 @@ A lightweight, web-based image editor for quick image manipulation, focusing on 
 - ✍️ **Text Overlay**: Add and style text with customizable font family, size, color, width, and line height.
 - 🔍 **Image Manipulation**: Scale and move images within the canvas.
 - ⏪ **Undo/Redo**: 50-step history support for seamless editing.
-- 💾 **Save Image**: Export your final work as an image file.
+- 💾 **Save & Export**: Export final work with customizable format (PNG, JPEG, WebP) and quality settings.
+- 🔄 **State Persistence**: Automatically saves your editor settings (colors, fonts, export preferences) locally.
 - 📱 **Responsive UI**: Modern sidebar interface powered by Tailwind CSS.
 
 ## 🛠️ Tech Stack

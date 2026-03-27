@@ -1,5 +1,6 @@
 export type Tool = 'select' | 'fill' | 'text' | 'move';
 export type FillMode = 'auto' | 'solid';
+export type ExportFormat = 'png' | 'jpeg' | 'webp';
 
 export interface EditorState {
   hasImage: boolean;
@@ -20,6 +21,10 @@ export interface EditorState {
   fontColor: string;
   textWidth: number;
   lineHeight: number;
+  
+  // Export Settings
+  exportFormat: ExportFormat;
+  exportQuality: number;
   
   statusMessage: string;
   
@@ -43,6 +48,11 @@ export interface EditorState {
   setFontColor: (color: string) => void;
   setTextWidth: (width: number) => void;
   setLineHeight: (height: number) => void;
+  
+  // Export Setters
+  setExportFormat: (format: ExportFormat) => void;
+  setExportQuality: (quality: number) => void;
+  
   setStatusMessage: (message: string) => void;
   
   setCanUndo: (can: boolean) => void;

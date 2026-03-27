@@ -52,6 +52,8 @@ export function CanvasEditor({ handlers, onTextStyleChange }: CanvasEditorProps)
     fontColor,
     textWidth,
     lineHeight,
+    exportFormat,
+    exportQuality,
     setHasImage,
     setImageScale,
     setIsSelecting,
@@ -368,18 +370,18 @@ export function CanvasEditor({ handlers, onTextStyleChange }: CanvasEditorProps)
     const multiplier = Math.max(1, Math.min(originalWidth / CANVAS_WIDTH, originalHeight / CANVAS_HEIGHT) * 2);
 
     const dataUrl = canvas.toDataURL({
-      format: 'png',
-      quality: 1,
+      format: exportFormat,
+      quality: exportQuality,
       multiplier: multiplier,
     });
 
     const link = document.createElement('a');
     link.href = dataUrl;
-    link.download = 'edited-image.png';
+    link.download = `edited-image.${exportFormat}`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  }, []);
+  }, [exportFormat, exportQuality]);
 
   // Expose handlers to parent via the handlers prop
   useEffect(() => {

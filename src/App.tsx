@@ -36,6 +36,8 @@ function App() {
     fontColor,
     textWidth,
     lineHeight,
+    exportFormat,
+    exportQuality,
     statusMessage,
     canUndo,
     canRedo,
@@ -46,6 +48,8 @@ function App() {
     setFontColor,
     setTextWidth,
     setLineHeight,
+    setExportFormat,
+    setExportQuality,
   } = useEditorStore();
 
   const handlersRef = useRef<CanvasEditorHandlers>({
@@ -303,6 +307,45 @@ function App() {
                   onChange={handleLineHeightInput}
                   className="input-field"
                 />
+              </div>
+            </div>
+          </section>
+
+          <hr className="border-slate-100" />
+
+          {/* Export Settings Section */}
+          <section className="space-y-4">
+            <label className="label-text">{t('common.exportSettings')}</label>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-1">
+                <label className="text-[10px] text-slate-400 uppercase font-bold">{t('common.exportFormat')}</label>
+                <select
+                  value={exportFormat}
+                  onChange={(e) => setExportFormat(e.target.value as any)}
+                  className="input-field"
+                >
+                  <option value="png">PNG</option>
+                  <option value="jpeg">JPEG</option>
+                  <option value="webp">WebP</option>
+                </select>
+              </div>
+              <div className="space-y-1">
+                <label className="text-[10px] text-slate-400 uppercase font-bold">{t('common.exportQuality')}</label>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="range"
+                    min="0.1"
+                    max="1"
+                    step="0.1"
+                    value={exportQuality}
+                    onChange={(e) => setExportQuality(parseFloat(e.target.value))}
+                    disabled={exportFormat === 'png'}
+                    className="flex-1 h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600 disabled:opacity-30"
+                  />
+                  <span className="text-[10px] text-slate-400 font-mono w-6 text-right">
+                    {Math.round(exportQuality * 100)}%
+                  </span>
+                </div>
               </div>
             </div>
           </section>
